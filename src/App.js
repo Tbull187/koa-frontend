@@ -1,8 +1,11 @@
 import React from 'react';
 import { Grommet, Box, Button, Heading, } from 'grommet';
+import { Switch, Route, Link, } from 'react-router-dom';
 import { Notification } from 'grommet-icons';
 import { UsersTableContainer } from './components';
 import { AppBar } from './components/layout';
+import { DataTable } from './components/dataTable/dataTable';
+import './App.css';
 
 const theme = {
   global: {
@@ -34,10 +37,26 @@ function App() {
               align='center'
               justify='center'
             >
-              sidenav
+              <div className='navContainer'>
+                <Link to='/'>Home</Link>
+                <Link to='/usertable'>Users Table</Link>
+                <Link to='/datatable'>Data Table</Link>
+              </div>
           </Box>          
           <Box flex justify='center'>
-            <UsersTableContainer />
+            
+            <Switch>
+              <Route path='/datatable'>
+                <DataTable />
+              </Route>
+              <Route path='/usertable'>
+                <UsersTableContainer />
+              </Route>      
+              <Route path='/'>
+                <div>home</div>
+              </Route>
+            </Switch>
+
           </Box>
         </Box>
       </Box>

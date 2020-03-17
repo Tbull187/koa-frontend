@@ -21,7 +21,8 @@ export class UsersTableContainer extends React.Component {
       return res.data;
     }
     catch(err) {
-      console.log('Error fetching users:', err);
+      console.log(err);
+      return [];
     }
   }
 

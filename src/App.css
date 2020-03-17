@@ -1,0 +1,14 @@
+.navContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.navContainer a {
+    padding: 10px 5px;
+}
+
+.navContainer a:hover {
+    background-color: #fff;
+}
